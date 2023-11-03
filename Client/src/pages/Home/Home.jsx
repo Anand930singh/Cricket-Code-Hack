@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-// import './Home.scss'
+import './Home.scss'
 // import background from '../../Images/back.jpg';
 import {
   faCss3,
