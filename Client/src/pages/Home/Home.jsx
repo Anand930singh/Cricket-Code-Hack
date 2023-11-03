@@ -1,16 +1,12 @@
 import React from 'react';
 import './Home.css';
 import './Home.scss'
-// import background from '../../Images/back.jpg';
-import {
-  faCss3,
-  faGitAlt,
-  faHtml5,
-  faJsSquare,
-  faNodeJs,
-  faReact,
-} from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import{BiCricketBall} from 'react-icons/bi' 
+import{TbCricket} from 'react-icons/tb'
+import{MdStadium} from 'react-icons/md'
+import{PiNumberSquareSixBold, PiNumberSquareFourDuotone} from 'react-icons/pi'
+import{GiTrophyCup} from 'react-icons/gi'
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 
@@ -20,28 +16,32 @@ function Home() {
     <div className='home'>
       <Navbar/>
       <div className="homeBody">
-      <div className="stage-cube-cont">
+        <div className="leftHomeBody"></div>
+        <div className="rightHomeBody">
+        <div className="stage-cube-cont">
           <div className="cubespinner">
             <div className="face1">
-              <FontAwesomeIcon icon={faNodeJs} color="#DD0031" />
+            <BiCricketBall color="red"/>
             </div>
             <div className="face2">
-              <FontAwesomeIcon icon={faHtml5} color="#F06529" />
+              <TbCricket />
             </div>
             <div className="face3">
-              <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
+              <MdStadium />
             </div>
             <div className="face4">
-              <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
+              <PiNumberSquareSixBold />
             </div>
             <div className="face5">
-              <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
+              <PiNumberSquareFourDuotone />
             </div>
             <div className="face6">
-              <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
+              <GiTrophyCup />
             </div>
           </div>
           </div>
+        </div>
+      
       </div>
       <Footer/>
     </div>
