@@ -1,6 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
 .home {
     height: 100vh;
     width: 100vw;
     background: radial-gradient(circle at 73% 50%, #10068196 -200%, #020108  100%);
   }
-  
+
+  .homeBody{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    height:90%;
+    align-items: center;
+  }
+  .leftHomeBody{
+    /* position:relative; */
+    display: flex;
+    flex-direction: column;
+    height:50%;
+    border: 1px solid yellow;
+    /* margin-left: 3rem; */
+  }
+  .rightHomeBody{
+    border:1px solid red;
+    height:50%;
+    width:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    }
+  .homeTagLine{
+    position: relative;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: 'Roboto Slab', serif;
+  }
+  .homeButton button {
+    background-color: #3498db;
+    color: #fff;  
+    padding: 8px 18px; 
+    border: none;
+    font-size: 2rem;
+    font-weight: bolder;
+    border-radius: 5px; 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.homeButton button:hover {
+    transform: scale(1.05); 
+    cursor: pointer;
+}
+
+
+  @media (max-width: 748px) {
+
+    .homeBody{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    }
+    
+}

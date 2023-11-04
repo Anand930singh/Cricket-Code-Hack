@@ -1,49 +1,29 @@
-import React from 'react';
-import './Home.css';
-import './Home.scss'
-// import background from '../../Images/back.jpg';
-import {
-  faCss3,
-  faGitAlt,
-  faHtml5,
-  faJsSquare,
-  faNodeJs,
-  faReact,
-} from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
+import React from "react";
+import "./Home.css";
+
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+import RotatingCube from "../../components/RotatingCube/RotatingCube";
 
 function Home() {
-
   return (
-    <div className='home'>
-      <Navbar/>
+    <div className="home">
+      <Navbar />
       <div className="homeBody">
-      <div className="stage-cube-cont">
-          <div className="cubespinner">
-            <div className="face1">
-              <FontAwesomeIcon icon={faNodeJs} color="#DD0031" />
-            </div>
-            <div className="face2">
-              <FontAwesomeIcon icon={faHtml5} color="#F06529" />
-            </div>
-            <div className="face3">
-              <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
-            </div>
-            <div className="face4">
-              <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-            </div>
-            <div className="face5">
-              <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
-            </div>
-            <div className="face6">
-              <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
-            </div>
+        <div className="leftHomeBody">
+          <div className="homeTagLine">
+          STEP UP YOUR <br/> PREDICTION WITH US
           </div>
-          </div>
+          <div className="homeButton">
+            <button>Predict</button>
+          </div>
+          
+        </div>
+        <div className="rightHomeBody">
+          <RotatingCube/>
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
