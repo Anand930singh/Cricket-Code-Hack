@@ -16,7 +16,6 @@ function Home() {
           <div className="homeButton">
             <button>Predict</button>
           </div>
-          
         </div>
         <div className="rightHomeBody">
           <RotatingCube/>
