@@ -3,7 +3,7 @@
 .home {
   height: 100vh;
   width: 100vw;
-  background: radial-gradient(circle at 73% 50%, #10068196 -200%, #020108 100%);
+  background: radial-gradient(circle at 73% 50%, #26262696 -200%, #020108 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,12 +14,12 @@
   position: relative;
   height: 90%;
   width: 98%;
-background: rgba(38, 150, 200, 0.04);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(2.9px);
--webkit-backdrop-filter: blur(2.9px);
-border: 1px solid rgba(38, 150, 200, 0.05);
+  background: rgba(38, 150, 200, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.9px);
+  -webkit-backdrop-filter: blur(2.9px);
+  border: 1px solid rgba(38, 150, 200, 0.05);
 }
 
 .homeBody {
