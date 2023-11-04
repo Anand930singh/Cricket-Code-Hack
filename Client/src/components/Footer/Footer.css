@@ -1,0 +1,38 @@
+.bottom ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap:wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding:1rem 0;
+  }
+  
+  .bottom ul li {
+    padding:0 0.8rem;
+    white-space: nowrap;
+  }
+  
+  .social {
+    margin: 0;
+  }
+  
+  .bottom {
+      color: white;
+      background-color: black;
+      padding: 20px ;
+      font-size: 20px;
+      flex-direction: column;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .bottom p {
+    font-size: 16px;
+    width:fit-content;
+    color: #b3cce0;
+  }
+  
