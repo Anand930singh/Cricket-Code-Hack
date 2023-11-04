@@ -1,73 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+
 .home {
-    height: 100vh;
-    width: 100vw;
-    background: radial-gradient(circle at 73% 50%, #10068196 -200%, #020108  100%);
-  }
-.homeCard{
-  position:relative;
-  height: 80%;
-  width:80%;
-
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at 73% 50%, #10068196 -200%, #020108 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-  .homeBody{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    color: white;
-    height:90%;
-    align-items: center;
-    justify-content: center;
-  }
-  .leftHomeBody{
-    /* position:relative; */
-    display: flex;
-    flex-direction: column;
-    height:50%;
-    width:auto;
-    padding-left: 3rem;
-    justify-content: center;
-  }
-  .rightHomeBody{
-    height:50%;
-    width:49%;
-    /* padding-top:3rem; */
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    }
-  .homeTagLine{
-    position: relative;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    margin-top:1rem;
-    font-family: 'Roboto Slab', serif;
-  }
 
-  .homeButton button {
-    background-color: #3498db;
-    color: #fff;  
-    padding: 8px 18px; 
-    border: none;
-    font-size: 2rem;
-    font-weight: bolder;
-    border-radius: 5px; 
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+.homeCard {
+  position: relative;
+  height: 90%;
+  width: 98%;
+background: rgba(38, 150, 200, 0.04);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(2.9px);
+-webkit-backdrop-filter: blur(2.9px);
+border: 1px solid rgba(38, 150, 200, 0.05);
+}
+
+.homeBody {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: white;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftHomeBody {
+  /* position:relative; */
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: auto;
+  padding-left: 3rem;
+  justify-content: center;
+}
+
+.rightHomeBody {
+  height: 50%;
+  width: 49%;
+  /* padding-top:3rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeTagLine {
+  position: relative;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-family: 'Roboto Slab', serif;
+}
+
+.homeButton button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 18px;
+  border: none;
+  font-size: 2rem;
+  font-weight: bolder;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .homeButton button:hover {
-    transform: scale(1.05); 
-    cursor: pointer;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 
-  @media (max-width: 748px) {
+@media (max-width: 748px) {
 
-    .homeBody{
-    display:flex;
-    flex-direction:row;
+  .homeBody {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    }
-    
+  }
+
 }

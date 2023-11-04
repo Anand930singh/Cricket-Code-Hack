@@ -7,8 +7,8 @@ import RotatingCube from '../../components/RotatingCube/RotatingCube';
 function Home() {
   return (
     <div className="home">
-    <div className="homeCard">
       <Navbar />
+    <div className="homeCard">
       <div className="homeBody">
         <div className="leftHomeBody">
           <div className="homeTagLine">
@@ -22,8 +22,8 @@ function Home() {
           <RotatingCube/>
         </div>
       </div>
-      <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
