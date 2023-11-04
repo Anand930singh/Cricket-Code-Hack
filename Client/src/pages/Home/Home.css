@@ -4,7 +4,12 @@
     width: 100vw;
     background: radial-gradient(circle at 73% 50%, #10068196 -200%, #020108  100%);
   }
+.homeCard{
+  position:relative;
+  height: 80%;
+  width:80%;
 
+}
   .homeBody{
     display: flex;
     flex-direction: row;
