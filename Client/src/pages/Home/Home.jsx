@@ -12,10 +12,11 @@ function Home() {
       <div className="homeBody">
         <div className="leftHomeBody">
           <div className="homeTagLine">
-          STEP UP YOUR <br/> PREDICTION WITH US
+            <div className="line-one">STEP UP YOUR </div>
+            <div className="line-two"> <span>PREDICTION</span> WITH US</div>
           </div>
           <div className="homeButton">
-            <button>Predict</button>
+            <button>PREDICT</button>
           </div>
         </div>
         <div className="rightHomeBody">
