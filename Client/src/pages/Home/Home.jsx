@@ -1,9 +1,8 @@
-import React from "react";
-import "./Home.css";
-
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import RotatingCube from "../../components/RotatingCube/RotatingCube";
+import React from 'react';
+import './Home.css';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import RotatingCube from '../../components/RotatingCube/RotatingCube';
 
 function Home() {
   return (

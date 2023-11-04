@@ -1,43 +1,41 @@
-import React from 'react'
-import './RotatingCube.scss'
+import React from "react";
+import "./RotatingCube.scss";
+import { BiCricketBall } from "react-icons/bi";
+import { TbCricket } from "react-icons/tb";
+import { MdStadium } from "react-icons/md";
 import {
-    faCss3,
-    faGitAlt,
-    faHtml5,
-    faJsSquare,
-    faNodeJs,
-    faReact,
-  } from "@fortawesome/free-brands-svg-icons";
-  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  PiNumberSquareSixBold,
+  PiNumberSquareFourDuotone,
+} from "react-icons/pi";
+import { GiTrophyCup } from "react-icons/gi";
 
 function RotatingCube() {
   return (
     <div>
-        <div className="stage-cube-cont">
-            <div className="cubespinner">
-              <div className="face1">
-                <FontAwesomeIcon icon={faNodeJs} color="#DD0031" />
-              </div>
-              <div className="face2">
-                <FontAwesomeIcon icon={faHtml5} color="#F06529" />
-              </div>
-              <div className="face3">
-                <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
-              </div>
-              <div className="face4">
-                <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-              </div>
-              <div className="face5">
-                <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
-              </div>
-              <div className="face6">
-                <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
-              </div>
-            </div>
-                      
+      <div className="stage-cube-cont">
+        <div className="cubespinner">
+          <div className="face1">
+            <BiCricketBall color="red" />
           </div>
+          <div className="face2">
+            <TbCricket />
+          </div>
+          <div className="face3">
+            <MdStadium />
+          </div>
+          <div className="face4">
+            <PiNumberSquareSixBold />
+          </div>
+          <div className="face5">
+            <PiNumberSquareFourDuotone />
+          </div>
+          <div className="face6">
+            <GiTrophyCup />
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default RotatingCube
+export default RotatingCube;
