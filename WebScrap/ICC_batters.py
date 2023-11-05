@@ -46,10 +46,12 @@ for url in urls:
 
     link = soup.find(class_='icc-home')
     # print(link.text)
-
-    pattern = r'\b[A-Z][A-Za-z\s]+\s[A-Z][A-Za-z]+\b'
+    # print(link.text)
+    pattern = r'\b[A-Z][A-Za-z]+\s[A-Z][A-Za-z]+\b'
 
     Player_name = re.search(pattern, link.text).group()
+
+    # print(Player_name)
 
     for table in engine_table:
         caption = table.find('caption')

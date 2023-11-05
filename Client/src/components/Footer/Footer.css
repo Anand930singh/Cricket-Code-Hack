@@ -19,6 +19,8 @@
     background-color: transparent;
     padding: 0.5rem 0;
     width:100%;
+    display: flex;
+    justify-content: center;
   }
   .bottom {
       color: white;
@@ -28,7 +30,7 @@
       font-size: 20px;
       flex-direction: column;
       bottom: 0;
-      width: 99%;
+      width: 98%;
       display: flex;
       justify-content: space-between;
       align-items: center;
