@@ -3,8 +3,9 @@
 .about {
   /* height: 100vh; */
   width: 100%;
-  background: radial-gradient(circle at 73% 50%, #35353696 -200%, #050505 100%);
+  /* background: radial-gradient(circle at 73% 50%, #35353696 -200%, #050505 100%); */
   display: flex;
+  background-color: transparent;
   flex-direction: column;
   justify-content: center;
   align-items: center;
