@@ -1,0 +1,30 @@
+.app{
+    display:flex;
+    flex-direction: column;
+    /* background: rgba(38, 150, 200, 0.04); */
+  background: radial-gradient(circle at 73% 50%, #35353696 -200%, #050505 100%);
+}
+
+/* Hide the default scrollbar for Webkit browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Customize the track of the scrollbar */
+  ::-webkit-scrollbar-track {
+    background: #35353696;
+  }
+  
+  /* Customize the thumb (the draggable part of the scrollbar) */
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+  }
+  
+  /* Customize the buttons (arrows) at the top and bottom of the scrollbar */
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+  
+
+  

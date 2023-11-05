@@ -1,33 +1,23 @@
-import React from 'react'
-import {Link,NavLink} from 'react-router-dom'
-import './Navbar.css'
+import React from 'react';
+import './Navbar.css';
+// import Predictor from '../../Images/Predictor.gif'
 
-
-function Navbar() {
+const Navbar = () => {
   return (
-    <div className="nav-bar">
-        <Link className="logo" to="/" >
-            Logo  
-        </Link>
-        <nav>
-            <NavLink exact="true" activeclassname="active" className="offers-link" to="/offers">
-              Offers
-            </NavLink>
-            <NavLink exact="true" activeclassname="active" className="contact-link" to="/contact">
-                Contact
-            </NavLink>
-            <NavLink exact="true" activeclassname="active" className="about-link" to="/about">
-                About
-            </NavLink>
-            <NavLink exact="true" activeclassname="active" className="features-link" to="/features">
-                Features
-            </NavLink>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-left">
+          <img src='ljj' alt="Logo" className="logo" />
+        </div>
+        <div className="navbar-right">
+          <a href="dijf">Offers</a>
+          <a href="sjdn">Contact</a>
+          <a href="ksdnh">About</a>
+          <a href="sdkfnh">Features</a>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
-        </nav>
-    </div>
-     
-    
-  )
-}
-
-export default Navbar
+export default Navbar;

@@ -15,19 +15,29 @@
   .social {
     margin: 0;
   }
-  
+  .bottomCont{
+    background-color: transparent;
+    padding: 0.5rem 0;
+    width:100%;
+  }
   .bottom {
       color: white;
-      background-color: black;
-      padding: 20px ;
+      position: relative;
+      /* background-color: black; */
+      padding: 1.5rem 0 ;
       font-size: 20px;
       flex-direction: column;
-      position: fixed;
       bottom: 0;
-      width: 100%;
+      width: 99%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: rgba(38, 150, 200, 0.04);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.9px);
+    -webkit-backdrop-filter: blur(2.9px);
+    border: 1px solid rgba(38, 150, 200, 0.05);
   }
   
   .bottom p {

@@ -6,6 +6,7 @@ import React from "react"
 function Footer() {
   return (
  
+    <div className="bottomCont">
       <div className="bottom">
         <ul className="social">
           <li>
@@ -33,7 +34,7 @@ function Footer() {
 
         <p>© CricketCodeHack. All rights reserved</p>
       </div>
-    
+      </div>
   )
 }
 
