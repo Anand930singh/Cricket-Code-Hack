@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="navbar-right">
           <a href="dijf">Offers</a>
           <a href="sjdn">Contact</a>
-          <a href="ksdnh">About</a>
+          <a href="/about">About</a>
           <a href="sdkfnh">Features</a>
         </div>
       </div>
