@@ -57,6 +57,8 @@
   position: relative;
   margin-bottom: 1rem;
   margin-top: -6rem;
+  animation: fadeIn 2s;
+  transition: transform 0.3s;
 }
 
 .homeButton button {
@@ -97,13 +99,13 @@
 .line-one{
   position:relative;
   font-family: 'Playfair Display';
-  font-size: 2.2rem;
+  font-size: 2.4rem;
 }
 
 .line-two{
   position:relative;
   font-family: 'Bebas Neue';
-  font-size: 2.7rem;
+  font-size: 3rem;
 }
 
 .line-two span{
@@ -111,4 +113,14 @@
   font-style: bold;
   font-weight: bold;
   text-shadow: 1px 1px rgb(238, 255, 108);
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0.2;
+  }
+  to{
+    opacity:1;
+  }
 }
