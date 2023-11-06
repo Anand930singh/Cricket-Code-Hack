@@ -102,7 +102,7 @@
   flex-direction: row;
 }
 
-.homeButton button {
+.homeButton a {
   text-decoration: none;
   background-color: #ff0f50;
   color:  white;
@@ -114,24 +114,21 @@
   font-style: bolder;
   text-align: center;
   font-weight: 500;
-  box-shadow: 2px 2px 2px rgb(241, 176, 176);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin-top: 0.1rem;
   margin-right:1.5rem;
 }
 
-.homeButton button:nth-child(2) {
+.homeButton a:nth-child(2) {
   border:2px solid #ff0f50;
   background-color: transparent;
 }
 
-.homeButton button:hover {
+
+.homeButton a:hover {
   cursor: pointer;
-  box-shadow: 2px 2px 2px 2px rgb(250, 193, 193);
-  font-size: 1.5rem;
-  padding:0.6rem 3.2rem;
-  font-style: bolder;
-  text-align: center;
-  font-weight: 600;
+  background-color: #cb0338;
+  box-shadow: 0 0 3px 0 grey;
 }
 
 

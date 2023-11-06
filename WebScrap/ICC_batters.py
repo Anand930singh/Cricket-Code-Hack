@@ -105,7 +105,7 @@ for url in urls:
                         place = cell.text
                     if cell == cells[8] and row== rows[0]:
                         continue
-                    if cell == cells[8] and row!= rows[0]:
+                    elif cell == cells[8] :
                         # print(cell.text)
                         test_count = cell.text.split(" v ")
                         # print(test_count)
@@ -121,17 +121,17 @@ for url in urls:
                     row_data.append('format')
                     row_data.append('opposition')
                 else:
-                    wether_data=get_api_data(date,place)
-                    if wether_data:
-                        row_data.append(wether_data.get("temp", "N/A"))
-                        row_data.append(wether_data.get("hum", "N/A"))
-                        row_data.append(wether_data.get("wind", "N/A"))
-                        row_data.append(wether_data.get("conditions", "N/A"))
-                    else:
-                        row_data.append("N/A")
-                        row_data.append("N/A")
-                        row_data.append("N/A")
-                        row_data.append("N/A")
+                    # wether_data=get_api_data(date,place)
+                    # if wether_data:
+                    #     row_data.append(wether_data.get("temp", "N/A"))
+                    #     row_data.append(wether_data.get("hum", "N/A"))
+                    #     row_data.append(wether_data.get("wind", "N/A"))
+                    #     row_data.append(wether_data.get("conditions", "N/A"))
+                    # else:
+                    #     row_data.append("N/A")
+                    #     row_data.append("N/A")
+                    #     row_data.append("N/A")
+                    #     row_data.append("N/A")
                     row_data.append(format)
                     row_data.append(opposition)
                 

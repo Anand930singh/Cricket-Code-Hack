@@ -16,7 +16,8 @@ function Home() {
               </div>
             </div>
             <div className="homeButton">
-              <button>PREDICT</button>
+                <a href="/predict">PREDICT</a>
+                <a href="/about">ABOUT</a>
             </div>
           </div>
           <div className="rightHomeBody">
