@@ -1,6 +1,7 @@
-import React from "react";
-import "./Home.css";
-import RotatingCube from "../../components/RotatingCube/RotatingCube";
+import React from 'react';
+import './Home.css';
+import RotatingCube from '../../components/RotatingCube/RotatingCube';
+import { ReactComponent as BgImage } from '../../Images/bg.svg'; // Import the SVG as a React component
 
 function Home() {
   return (
@@ -11,7 +12,6 @@ function Home() {
             <div className="homeTagLine">
               <div className="line-one">STEP UP YOUR </div>
               <div className="line-two">
-                {" "}
                 <span>PREDICTION</span> WITH US
               </div>
             </div>
@@ -23,6 +23,10 @@ function Home() {
           <div className="rightHomeBody">
             <RotatingCube />
           </div>
+        </div>
+        <div className="bgImage">
+          <BgImage className='svg1'/>
+          <BgImage className='svg2'/>
         </div>
       </div>
     </div>

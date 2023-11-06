@@ -58,6 +58,10 @@
   box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.411);
 }
 
+.problemStatementCard:hover{
+  box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.411);
+}
+
 .contentProblem{
   margin-bottom: 2rem;
   margin-left: 2rem;

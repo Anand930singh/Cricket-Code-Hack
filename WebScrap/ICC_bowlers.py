@@ -3,17 +3,28 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import re
 
-urls = ["https://stats.espncricinfo.com/ci/engine/player/232364.html?class=11;template=results;type=bowling;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/247235.html?class=11;template=results;type=bowling;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/559235.html?class=11;template=results;type=bowling;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/506612.html?class=11;template=results;type=bowling;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/288284.html?class=11;template=results;type=bowling;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/550215.html?class=11;template=results;type=bowling;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/277912.html?class=11;template=results;type=bowling;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/311592.html?class=11;template=results;type=bowling;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/481896.html?class=11;template=results;type=bowling;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/625383.html?class=11;template=results;type=bowling;view=match"
-        ]
+urls = [
+        "https://stats.espncricinfo.com/ci/engine/player/600498.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/436757.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/321777.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/379143.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/372116.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/787987.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/325026.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/959767.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/823509.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/1070173.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/642519.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/297433.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/311158.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/308967.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/34102.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/219889.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/422108.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/267192.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/277906.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/253802.html?class=11;template=results;type=batting;view=match"
+    ]
 
 data = []
 

@@ -7,7 +7,6 @@ from datetime import datetime
 urls = [
         "https://stats.espncricinfo.com/ci/engine/player/600498.html?class=11;template=results;type=batting;view=match",
         "https://stats.espncricinfo.com/ci/engine/player/436757.html?class=11;template=results;type=batting;view=match",
-        "https://stats.espncricinfo.com/ci/engine/player/321777.html?class=11;template=results;type=batting;view=match",
         "https://stats.espncricinfo.com/ci/engine/player/379143.html?class=11;template=results;type=batting;view=match",
         "https://stats.espncricinfo.com/ci/engine/player/372116.html?class=11;template=results;type=batting;view=match",
         "https://stats.espncricinfo.com/ci/engine/player/787987.html?class=11;template=results;type=batting;view=match",
@@ -28,7 +27,7 @@ urls = [
     ]
 
 api_key=[
-    "PJBH7BBMBLJ6BHMB27WFEWXTN",  #Avaneesh
+    # "PJBH7BBMBLJ6BHMB27WFEWXTN",  #Avaneesh
     "ZDNKN86N22MS4H6KF9HHBBJ2F",  #Aayush
     "YXSFDUYGVRHE9SYXTEY4VXW88",  #Ashish
     "U2RBSW9GFFYQA8WXJJK2TBPP3",   #Anish
@@ -42,7 +41,6 @@ jnd=0
 def get_api_data(date, place):
     global jnd, ind
     if date and place:
-        print('hii')
         jnd=jnd+1
         parsed_date = datetime.strptime(date, "%d %b %Y")
         formatted_date = parsed_date.strftime("%Y-%m-%d")
@@ -52,7 +50,7 @@ def get_api_data(date, place):
         api_url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{place}/{formatted_date}/{formatted_date}?unitGroup=us&include=days&key={key}&contentType=json"
         # print(api_url)
         response = requests.get(api_url)
-        if jnd>900:
+        if jnd>950:
             jnd=0
             ind=ind+1
         if response.status_code == 200:
