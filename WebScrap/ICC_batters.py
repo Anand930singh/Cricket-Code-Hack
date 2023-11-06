@@ -4,32 +4,57 @@ import pandas as pd
 import re
 from datetime import datetime
 
-# urls = ["https://stats.espncricinfo.com/ci/engine/player/422108.html?class=11;template=results;type=batting;view=match",
-#         "https://stats.espncricinfo.com/ci/engine/player/219889.html?class=11;template=results;type=batting;view=match",
-#         "https://stats.espncricinfo.com/ci/engine/player/34102.html?class=11;template=results;type=batting;view=match",
-#         "https://stats.espncricinfo.com/ci/engine/player/308967.html?class=11;template=results;type=batting;view=match",
-#         "https://stats.espncricinfo.com/ci/engine/player/311158.html?class=11;template=results;type=batting;view=match",
-#         "https://stats.espncricinfo.com/ci/engine/player/36084.html?class=11;template=results;type=batting;view=match",
-#         "https://stats.espncricinfo.com/ci/engine/player/28081.html?class=11;template=results;type=batting;view=match",
-#         "https://stats.espncricinfo.com/ci/engine/player/28081.html?class=11;template=results;type=batting;view=match",
-#         "https://stats.espncricinfo.com/ci/engine/player/277906.html?class=11;template=results;type=batting;view=match",
-#         "https://stats.espncricinfo.com/ci/engine/player/253802.html?class=11;template=results;type=batting;view=match"
-#         ]
+urls = [
+        "https://stats.espncricinfo.com/ci/engine/player/600498.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/436757.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/321777.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/379143.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/372116.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/787987.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/325026.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/959767.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/823509.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/1070173.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/642519.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/297433.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/311158.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/308967.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/34102.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/219889.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/422108.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/267192.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/277906.html?class=11;template=results;type=batting;view=match",
+        "https://stats.espncricinfo.com/ci/engine/player/253802.html?class=11;template=results;type=batting;view=match"
+    ]
 
-urls =[
-    "https://stats.espncricinfo.com/ci/engine/player/253802.html?class=11;template=results;type=batting;view=match"
+api_key=[
+    "PJBH7BBMBLJ6BHMB27WFEWXTN",  #Avaneesh
+    "ZDNKN86N22MS4H6KF9HHBBJ2F",  #Aayush
+    "YXSFDUYGVRHE9SYXTEY4VXW88",  #Ashish
+    "U2RBSW9GFFYQA8WXJJK2TBPP3",   #Anish
+    "FQULW6FVZ26H9M9FE75BFGRCQ",  #Anand
+    "9MSUK7RWR5RB59E27GVBFAZJC"   #Aayush 2
 ]
 
+ind=0
+jnd=0
+
 def get_api_data(date, place):
+    global jnd, ind
     if date and place:
+        print('hii')
+        jnd=jnd+1
         parsed_date = datetime.strptime(date, "%d %b %Y")
         formatted_date = parsed_date.strftime("%Y-%m-%d")
 
-        # api_url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{place}/{formatted_date}/{formatted_date}?unitGroup=us&include=days&key=FQULW6FVZ26H9M9FE75BFGRCQ&contentType=json"   
-        api_url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{place}/{formatted_date}/{formatted_date}?unitGroup=us&include=days&key=ZDNKN86N22MS4H6KF9HHBBJ2F&contentType=json"
+        key=api_key[ind]
+        print(key)
+        api_url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{place}/{formatted_date}/{formatted_date}?unitGroup=us&include=days&key={key}&contentType=json"
         # print(api_url)
         response = requests.get(api_url)
-        
+        if jnd>900:
+            jnd=0
+            ind=ind+1
         if response.status_code == 200:
                 wet = response.json()
                 if wet:
@@ -82,7 +107,7 @@ for url in urls:
                         place = cell.text
                     if cell == cells[8] and row== rows[0]:
                         continue
-                    if cell == cells[8] and row!= rows[0]:
+                    elif cell == cells[8] :
                         # print(cell.text)
                         test_count = cell.text.split(" v ")
                         # print(test_count)
@@ -98,17 +123,17 @@ for url in urls:
                     row_data.append('format')
                     row_data.append('opposition')
                 else:
-                    wether_data=get_api_data(date,place)
-                    if wether_data:
-                        row_data.append(wether_data.get("temp", "N/A"))
-                        row_data.append(wether_data.get("hum", "N/A"))
-                        row_data.append(wether_data.get("wind", "N/A"))
-                        row_data.append(wether_data.get("conditions", "N/A"))
-                    else:
-                        row_data.append("N/A")
-                        row_data.append("N/A")
-                        row_data.append("N/A")
-                        row_data.append("N/A")
+                    # wether_data=get_api_data(date,place)
+                    # if wether_data:
+                    #     row_data.append(wether_data.get("temp", "N/A"))
+                    #     row_data.append(wether_data.get("hum", "N/A"))
+                    #     row_data.append(wether_data.get("wind", "N/A"))
+                    #     row_data.append(wether_data.get("conditions", "N/A"))
+                    # else:
+                    #     row_data.append("N/A")
+                    #     row_data.append("N/A")
+                    #     row_data.append("N/A")
+                    #     row_data.append("N/A")
                     row_data.append(format)
                     row_data.append(opposition)
                 

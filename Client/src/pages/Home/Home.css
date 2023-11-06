@@ -3,7 +3,9 @@
 .home {
   height: 100vh;
   width: 100%;
-  /* background: radial-gradient(circle at 73% 50%, #35353696 -200%, #050505 100%); */
+  /* background: radial-gradient(circle at 73% 50%,  rgb(9, 94, 164)-200%, rgb(3 22 38) 100%); */
+  /* background-image: url('../../Images/bg.jpg'); */
+  /* background-color: rgb(3 22 38); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +16,7 @@
   position: relative;
   height: 99.5%;
   width: 98%;
+  /* background-color: rgb(3 22 38); */
   background: rgba(38, 150, 200, 0.04);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -38,13 +41,14 @@
   flex-direction: column;
   height: 50%;
   /* width: 49%; */
+  padding-top: 3rem;
   margin-left: 3rem;
   justify-content: center;
   border:1px solid transparent;
 }
 
 .rightHomeBody {
-  height: 50%;
+  /* height: 50%; */
   width: 49%;
   /* padding-top:3rem; */
   display: flex;
@@ -61,27 +65,40 @@
   transition: transform 0.3s;
 }
 
-.homeButton button {
-  background-color: #abbe00;
-  color:  black;
-  position: absolute;
-  padding: 8px 18px;
-  border: none;
-  font-size: 2rem;
-  font-family: 'Inknut Antiqua';
-  font-style: bolder;
-  font-weight: 900;
-  border-radius: 5px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin-top: 1.5rem;
+.homeButton{
+  position:relative;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
 }
 
-.homeButton button:hover {
-  transform: scale(1.05);
+.homeButton a {
+  text-decoration: none;
+  background-color: #ff0f50;
+  color:  white;
+  border: none;
+  border-radius: 9rem;
+  font-size: 1.3rem;
+  padding:0.5rem 3rem;
+  font-family: Sofia Pro Soft Light,sans-serif;
+  font-style: bolder;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 0.1rem;
+  margin-right:1.5rem;
+}
+
+.homeButton a:nth-child(2) {
+  border:2px solid #ff0f50;
+  background-color: transparent;
+}
+
+
+.homeButton a:hover {
   cursor: pointer;
-  text-shadow: 1px 1px rgb(247, 254, 198);
-  box-shadow: 0 0 15px 0 grey;
-  font-size: 2.2rem;
+  background-color: #cb0338;
+  box-shadow: 0 0 3px 0 grey;
 }
 
 
@@ -109,10 +126,9 @@
 }
 
 .line-two span{
-  color: #abbe00;
+  color: #ff0f50;
   font-style: bold;
   font-weight: bold;
-  text-shadow: 1px 1px rgb(238, 255, 108);
   animation: fadeIn 3s;
 }
 
