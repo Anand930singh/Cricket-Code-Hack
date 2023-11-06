@@ -1,5 +1,4 @@
 .navbar {
-  background-color: transparent;
   color: #fff;
   padding: 0.5rem 0;
   width:100%;
@@ -12,10 +11,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* max-width: 1200px; */
   margin: 0 auto;
-  /* padding: 0 18px; */
-  background: rgba(38, 150, 200, 0.04);
+  background: #020120;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.9px);
