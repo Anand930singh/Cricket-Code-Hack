@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import RotatingCube from '../../components/RotatingCube/RotatingCube';
-import { ReactComponent as BgImage } from '../../Images/bg.svg'; // Import the SVG as a React component
+import { ReactComponent as BgImage } from '../../Images/bg.svg';
 
 function Home() {
   return (

@@ -4,6 +4,7 @@
   height: 100vh;
   width: 100%;
   display: flex;
+  padding-top:3.5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -45,13 +46,14 @@
 .homeCard {
   position: relative;
   height: 99.5%;
+  z-index: 90;
   width: 98%;
-  background: radial-gradient(circle at 72% 50%,  rgb(11, 156, 134)-200%, #010022 60%);
+  /* background: radial-gradient(circle at 72% 50%,  rgb(11, 156, 134)-200%, #010022 60%);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(2.9px);
   -webkit-backdrop-filter: blur(2.9px);
-  border: 1px solid rgba(38, 150, 200, 0.05);
+  border: 1px solid rgba(38, 150, 200, 0.05); */
 }
 
 .homeBody {
@@ -100,6 +102,7 @@
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
+  z-index:99;
 }
 
 .homeButton a {
@@ -140,7 +143,16 @@
     align-items: center;
     justify-content: center;
   }
+  .homeButton a{
+    margin-right:1rem;
+     font-size: 1rem;
+  }
+  .leftHomeBody{
+    margin-left: 2rem;
+    height: 40%;
+    margin-top: 2rem;
 
+  }
 }
 
 .line-one{

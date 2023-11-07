@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
+
 .navbar {
   color: #fff;
-  padding: 0.5rem 0;
+  /* padding: 0.5rem 0; */
   width:100%;
+  position: fixed;
+  z-index: 100;
+  background:rgb(1, 15, 37);
 }
 
 .navbar-container {
@@ -12,22 +18,35 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  background: #020120;
+  border-bottom:1px solid rgb(2, 23, 59);
+  /* background: #020120;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2.9px);
   -webkit-backdrop-filter: blur(2.9px);
-  border: 1px solid rgba(38, 150, 200, 0.05);
+  border: 1px solid rgba(38, 150, 200, 0.05); */
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
+  font-family: 'Bowlby One SC', sans-serif;
+  padding-left: 1rem;
 }
-
-.logo {
-  /* width: 50px; */
-  /* height: 50px; */
+.navbar-left a{
+  text-decoration: none;
+  color: white;
+  letter-spacing: 0.2rem;
+}
+.navbar-left span:hover{
+  color:red;
+}
+.navbar-left span:nth-child(5)
+{
+  color: red;
+  font-family: 'Palanquin Dark', sans-serif;
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 
 .navbar-right {
@@ -39,8 +58,35 @@
   color: #fff;
   text-decoration: none;
   margin-right: 20px;
+  font-family: Sofia Pro Soft Light,sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+}
+
+.navbar-right a {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff; /* Default text color */
+}
+
+.navbar-right a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px; /* Height of the underline */
+  background-color: #ff0544; /* Color of the underline */
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out; /* Add a smooth transition */
+}
+
+.navbar-right a:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 .navbar-right a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #e9a7b8; /* Text color on hover */
 }
+

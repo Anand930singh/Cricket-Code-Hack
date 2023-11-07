@@ -31,15 +31,16 @@
       flex-direction: column;
       bottom: 0;
       width: 98%;
+      border-top:1px solid ;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(38, 150, 200, 0.04);
+      /* background: rgba(38, 150, 200, 0.04);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2.9px);
     -webkit-backdrop-filter: blur(2.9px);
-    border: 1px solid rgba(38, 150, 200, 0.05);
+    border: 1px solid rgba(38, 150, 200, 0.05); */
   }
   
   .bottom p {
