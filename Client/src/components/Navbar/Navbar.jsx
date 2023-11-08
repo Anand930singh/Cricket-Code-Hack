@@ -7,7 +7,17 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-left">
-          <img src='ljj' alt="Logo" className="logo" />
+          <a href='/'>
+            <span>P</span>
+            <span>R</span>
+            <span>E</span>
+            <span>D</span>
+            <span>i</span>
+            <span>C</span>
+            <span>T</span>
+            <span>O</span>
+            <span>R</span>
+          </a>
         </div>
         <div className="navbar-right">
           <a href="dijf">Offers</a>

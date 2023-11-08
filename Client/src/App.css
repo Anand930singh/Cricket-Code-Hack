@@ -1,7 +1,8 @@
 .app{
     display:flex;
     flex-direction: column;
-    background:rgb(1, 15, 37)
+    /* background:rgb(1, 15, 37); */
+    background: radial-gradient(circle at 75% 36%,  rgb(11, 156, 134)-200%, #010022 60%);
 
 }
 
