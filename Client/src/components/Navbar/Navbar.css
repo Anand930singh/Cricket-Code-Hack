@@ -3,7 +3,6 @@
 
 .navbar {
   color: #fff;
-  /* padding: 0.5rem 0; */
   width:100%;
   position: fixed;
   z-index: 100;
@@ -13,18 +12,20 @@
 .navbar-container {
   position: relative;
   width:98%;
-  height:2.5rem;
+  height:4rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  border-bottom:1px solid rgb(2, 23, 59);
-  /* background: #020120;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(2.9px);
-  -webkit-backdrop-filter: blur(2.9px);
-  border: 1px solid rgba(38, 150, 200, 0.05); */
+  border-bottom:1px solid rgb(56, 57, 69);
+  /* background: #020120;  */
+  /* border-radius: 16px; */
+  /* box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1); */
+  /* backdrop-filter: blur(2.9px); */
+  /* -webkit-backdrop-filter: blur(2.9px); */
+  /* border: 1px solid rgba(38, 150, 200, 0.05); */ 
 }
 
 .navbar-left {
@@ -37,6 +38,7 @@
   text-decoration: none;
   color: white;
   letter-spacing: 0.2rem;
+  font-size: 1.5rem;
 }
 .navbar-left span:hover{
   color:red;
@@ -46,7 +48,7 @@
   color: red;
   font-family: 'Palanquin Dark', sans-serif;
   font-weight: bolder;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .navbar-right {
@@ -59,14 +61,14 @@
   text-decoration: none;
   margin-right: 20px;
   font-family: Sofia Pro Soft Light,sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   letter-spacing: 0.05rem;
 }
 
 .navbar-right a {
   position: relative;
   text-decoration: none;
-  color: #ffffff; /* Default text color */
+  color: #ffffff;
 }
 
 .navbar-right a::before {
@@ -76,7 +78,7 @@
   left: 50%;
   width: 0;
   height: 2px; /* Height of the underline */
-  background-color: #ff0544; /* Color of the underline */
+  background-color: 	#ffeaf4; /* Color of the underline */
   transition: width 0.3s ease-in-out, left 0.3s ease-in-out; /* Add a smooth transition */
 }
 
@@ -87,6 +89,21 @@
 
 .navbar-right a:hover {
   text-decoration: none;
-  color: #e9a7b8; /* Text color on hover */
+  color: #ff0544; /* Text color on hover */
+}
+
+@media (max-width: 551px) {
+  .navbar-container {
+    justify-content: center;
+  }
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar-right a {
+    margin-right: 10px; /* Adjust this margin as needed */
+  }
 }
 
