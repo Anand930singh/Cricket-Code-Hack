@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.css';
-// import Predictor from '../../Images/Predictor.gif'
+
 
 const Navbar = () => {
   return (
