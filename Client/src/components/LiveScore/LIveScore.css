@@ -1,0 +1,78 @@
+.upcomingMatchesPage{
+    position: relative;
+    width:100%;
+    /* height: 50%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+}
+.upcomingMatches{
+    position:relative;
+    width:22rem;
+    border:1px solid rgb(13, 153, 163);
+    display:flex;
+    flex-direction: column;
+    margin:1.5rem;
+    border-radius: 0.5rem;
+    background-color:rgb(155, 239, 245);
+    padding:0.5rem;
+}
+.seriesName{
+    position: relative;
+    text-align: center;
+    font-weight: bolder;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+@keyframes blink {
+    0% {
+      box-shadow: 2px 2px 4px 2px greenyellow;}
+    50% {
+      box-shadow: none; /* No box shadow in the middle of the animation */
+    }
+    100% {
+      box-shadow: 2px 2px 4px 2px greenyellow;}
+  }
+  
+  .matchStatus {
+    color: white;
+    font-size: 0.6rem;
+    background-color: rgb(40, 131, 40);
+    border-radius: 5px;
+    padding: 0 0.3rem;
+    height: 1rem;
+    animation: blink 2s infinite; /* Apply the "blink" animation infinitely */
+  }
+  
+  .matchFormat{
+    font-size:0.8rem;
+  }
+
+
+
+.matchBetw{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:0.8rem;
+}
+.team1, .team2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.vs{
+    font-weight: bolder;
+}
+.time_venue{
+    padding-top:1rem;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

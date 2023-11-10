@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
 
 .home {
-  height: 100vh;
   width: 100%;
   display: flex;
+  height:auto;
   padding-top:3.5rem;
   flex-direction: column;
   justify-content: center;
@@ -47,6 +47,7 @@
   position: relative;
   height: 99.5%;
   z-index: 90;
+  height: 100vh;
   width: 98%;
   /* background: radial-gradient(circle at 72% 50%,  rgb(11, 156, 134)-200%, #010022 60%);
   border-radius: 16px;
@@ -183,6 +184,9 @@
   }
 }
 
-
-
+.liveScore{
+  position:relative;
+  background-color: white;
+  width:100%;
+}
 

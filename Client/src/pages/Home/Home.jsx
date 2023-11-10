@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import RotatingCube from '../../components/RotatingCube/RotatingCube';
 import { ReactComponent as BgImage } from '../../Images/bg.svg';
+import LiveScore from '../../components/LiveScore/LiveScore';
 
 function Home() {
   return (
@@ -28,6 +29,9 @@ function Home() {
           <BgImage className='svg1'/>
           <BgImage className='svg2'/>
         </div>
+      </div>
+      <div className="liveScore">
+        <LiveScore/>
       </div>
     </div>
   );
