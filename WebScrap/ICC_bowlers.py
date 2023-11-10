@@ -29,7 +29,9 @@ urls = [
 data = []
 
 for url in urls:
+    print(url)
     r = requests.get(url)
+    print(r)
     soup = BeautifulSoup(r.text, 'html.parser')
 
     engine_table = soup.find_all('table', class_='engineTable')
@@ -60,7 +62,7 @@ for url in urls:
 
                 for cell in cells:
                     row_data.append(cell.text)
-                
+                print(row_data)
                 data.append(row_data)
 
 df = pd.DataFrame(data)

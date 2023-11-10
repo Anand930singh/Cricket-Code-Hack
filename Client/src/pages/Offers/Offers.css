@@ -55,4 +55,18 @@
     }
   }
 
- 
+  @media (max-width: 656px) {
+    .card {
+      padding: 3rem;
+      margin-top:5rem;
+    }
+  
+    .offers {
+      font-size: 2rem;
+      margin-top: auto;
+    }
+  
+    i.present {
+      font-size: 10rem;
+    }
+  }
