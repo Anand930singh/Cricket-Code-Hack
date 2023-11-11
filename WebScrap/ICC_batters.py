@@ -64,6 +64,7 @@ data = []
 
 for url in urls:
     r = requests.get(url)
+    print(r)
     soup = BeautifulSoup(r.text, 'html.parser')
 
     engine_table = soup.find_all('table', class_='engineTable')

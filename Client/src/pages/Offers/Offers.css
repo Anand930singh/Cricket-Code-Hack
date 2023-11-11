@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+
+  .card {
+    background-color: #010022; 
+    color: #fff; 
+    border-radius: 0.1rem;
+    padding: 5.4rem 8rem;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation:slideIn 1.5s ease 1; 
+  }
+  
+  .offers {
+    font-size: 3rem;
+    font-family: 'Playfair Display';
+    font-style: bolder;
+    font-weight:100;
+    animation: fadeIn 1.5s ease 1;
+    margin-top: -100px;
+
+  }
+  
+  i.present {
+    font-size: 10rem; /* Adjust the size of the icon as needed */
+    /* margin-right: 10px; */
+    color: #ffcc00;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  .offers h1:hover{
+    color:#eaec40;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 656px) {
+    .card {
+      padding: 3rem;
+      margin-top:5rem;
+    }
+  
+    .offers {
+      font-size: 2rem;
+      margin-top: auto;
+    }
+  
+    i.present {
+      font-size: 10rem;
+    }
+  }

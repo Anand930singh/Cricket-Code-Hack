@@ -7,6 +7,7 @@ import './App.css'
 import About from './pages/About/About'
 import Predict from './pages/Predict/Predict';
 import Loader from './components/Loader/Loader';
+import Offers from './pages/Offers/Offers';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/predict" element={<Predict />} />
+              <Route exact path="/offers" element={<Offers />} />
             </Routes>
             <Footer />
           </div>
