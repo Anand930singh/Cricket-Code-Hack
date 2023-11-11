@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./LIveScore.css";
+import "./UpcomingMatches.css";
 
 const MyComponent = () => {
   const [matches, setMatches] = useState([]);
