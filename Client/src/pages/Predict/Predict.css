@@ -9,7 +9,6 @@
 .filterForm{
     position: relative;
     width:65%;
-    height:35%;
     background: rgba(38, 150, 200, 0.04);
     border-radius: 16px;
     backdrop-filter: blur(2.9px);
@@ -17,6 +16,9 @@
     border: 1px solid rgba(38, 150, 200, 0.05);
     box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.411);
     margin-bottom: 2rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 3rem;
     padding-top: 2rem;
     padding-bottom: 3rem;
@@ -27,9 +29,19 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
     margin-top: 2rem;
 }
+@media (max-width: 500px) {
+    .predictionCateg{
+        justify-content:left ;
+         margin-bottom: 0rem;
+    }
+    .predictionDetail{
+        margin-top:1rem;
+    }
+}
+
 .predictionCateg label{
     position: relative;
     color:white;
@@ -48,8 +60,8 @@
     flex-wrap: wrap;
     justify-content:space-between;
     padding:0 3rem;
-    margin-bottom: 1.2rem;
-    margin-top: 5rem;
+    margin-bottom: 1.4rem;
+    margin-top: 3rem;
 }
 .predictionDetail select{
     width:10rem;
@@ -57,12 +69,13 @@
     color:white;
     background: transparent;
     border-radius: 5px;
+    margin-bottom: 0.7rem;
 }
 
 .predictionButton{
     display: flex;
     justify-content: center;
-    margin-top: 3.4rem;
+    /* margin-bottom: 3rem; */
   }
   
   .predictionButton a {

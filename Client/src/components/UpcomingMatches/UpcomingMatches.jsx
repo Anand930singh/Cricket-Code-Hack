@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./LIveScore.css";
+import "./UpcomingMatches.css";
+import {Hourglass} from 'react-loader-spinner'
 
 const MyComponent = () => {
   const [matches, setMatches] = useState([]);
@@ -136,7 +137,11 @@ const MyComponent = () => {
             </div>
         ))
       ) : (
-        <p>No matches data available.</p>
+        <div className="loaderUM">
+        <Hourglass
+          height="30"
+        />
+        </div>
       )}
     </div>
   );
