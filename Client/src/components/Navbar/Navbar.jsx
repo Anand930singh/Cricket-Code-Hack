@@ -21,7 +21,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-right">
           <a href="/offers">Offers</a>
-          <a href="sjdn">Contact</a>
+          <a href="/contact">Contact</a>
           <a href="/about">About</a>
           <a href="sdkfnh">Features</a>
         </div>

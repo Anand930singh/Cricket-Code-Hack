@@ -8,6 +8,7 @@ import About from './pages/About/About'
 import Predict from './pages/Predict/Predict';
 import Loader from './components/Loader/Loader';
 import Offers from './pages/Offers/Offers';
+import Contact from './pages/Contact/Contact';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
               <Route exact path="/about" element={<About />} />
               <Route exact path="/predict" element={<Predict />} />
               <Route exact path="/offers" element={<Offers />} />
+              <Route exact path="/contact" element={<Contact />} />
             </Routes>
             <Footer />
           </div>
