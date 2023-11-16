@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .filterForm{
@@ -78,7 +79,7 @@
     /* margin-bottom: 3rem; */
   }
   
-  .predictionButton a {
+  .predictionButton button{
     text-decoration: none;
     background-color: #abbe00;
     color:  black;
@@ -101,4 +102,20 @@
     box-shadow: 0 0 15px 0 grey;
     font-size: 2.2rem;
   }
-  
+  .predictionResult{
+    position: absolute;
+    width:60%;
+    /* border:1px solid yellow; */
+    display:flex;
+    justify-content: center;
+    margin-top:5rem;
+  }
+  .blurBackground {
+    filter: blur(20px); /* Adjust the blur amount as needed */
+    pointer-events: none; /* Allows pointer events to pass through the blurred section */
+  }
+  .crossSign{
+    position: absolute;
+    top:0.7rem;
+    right:0.7rem;
+}

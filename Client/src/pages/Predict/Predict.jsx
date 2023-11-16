@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { IconContext } from "react-icons";
+import { RxCross2 } from "react-icons/rx";
 import "./Predict.css";
+import PredictedDetail from "../../components/PredictedDetail/PredictedDetail";
 
 function Predict() {
   const [selectedOption, setSelectedOption] = useState("option1");
@@ -7,6 +10,7 @@ function Predict() {
   const [selectedOption2, setSelectedOption2] = useState('');
   const [selectedOption3, setSelectedOption3] = useState('');
   const [selectedOption4, setSelectedOption4] = useState('');
+  const [showPrediction, setShowPrediction] = useState(false);
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -28,9 +32,13 @@ function Predict() {
     setSelectedOption4(event.target.value);
   };
 
+  const handlePredictClick = () => {
+    setShowPrediction(!showPrediction); // Show prediction result when Predict is clicked
+  };
+
   return (
     <div className="predictMain">
-      <div className="filterForm">
+      <div className={`filterForm ${showPrediction ? "blurBackground" : ""}`}>
         <div className="predictionCateg">
           <label>
             <input
@@ -93,9 +101,21 @@ function Predict() {
           </select>
         </div>
         <div className="predictionButton">
-          <a href="kh">Predict</a>
+          <button onClick={handlePredictClick}>Predict</button>
         </div>
       </div>
+      {showPrediction && ( 
+        <div className="predictionResult">
+          <PredictedDetail />
+          <div className="crossSign">
+          <IconContext.Provider
+            value={{ color: "rgb(240, 96, 96)", size: "1.5rem", className:"crossIcon"}}
+          >
+            <RxCross2 onClick={handlePredictClick}/>
+          </IconContext.Provider>
+        </div>
+        </div>
+      )}
     </div>
   );
 }
