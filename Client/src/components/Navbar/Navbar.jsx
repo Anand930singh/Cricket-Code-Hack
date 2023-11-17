@@ -23,7 +23,7 @@ const Navbar = () => {
           <a href="/offers">Offers</a>
           <a href="/contact">Contact</a>
           <a href="/about">About</a>
-          <a href="sdkfnh">Features</a>
+          <a href="/matchdetail">Features</a>
         </div>
       </div>
     </nav>

@@ -21,7 +21,6 @@ function PredictedDetail() {
     try{
       const response = await fetch(url, options);
       result = await response.json();
-      console.log(result);
     }catch(e)
     {
       setPlayerImage('https://cdn-icons-png.flaticon.com/512/3007/3007142.png');
@@ -34,7 +33,6 @@ function PredictedDetail() {
 
       const response2= await fetch(url2, options);
       const imageData = await response2.blob();
-      console.log(URL.createObjectURL(imageData));
       setPlayerImage(URL.createObjectURL(imageData));
     }
     else{
@@ -43,7 +41,7 @@ function PredictedDetail() {
   }
 
   useEffect(()=>{
-    fetchPlayerImage('Virat Kholi')
+    fetchPlayerImage('Markaram')
   },[])
   
   return (

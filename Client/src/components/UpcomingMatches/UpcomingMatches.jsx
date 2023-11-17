@@ -16,9 +16,9 @@ const MyComponent = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "3e8ef66ca9msh5b1b3703e0f1858p18e899jsn2f40e3f2d1a0",
-        "X-RapidAPI-Host": "unofficial-cricbuzz.p.rapidapi.com",
-      },
+        'X-RapidAPI-Key': '3e8ef66ca9msh5b1b3703e0f1858p18e899jsn2f40e3f2d1a0',
+        'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
+    },
     };
 
     try {
@@ -49,15 +49,19 @@ const MyComponent = () => {
                       break;
                     }
                   }
+                  console.log(matchInfo)
                   matchDataArray.push({
                     seriesName: seriesName,
                     date: date,
+                    matchId:matchInfo.matchId,
                     matchDesc: matchInfo.matchDesc,
                     startDate: matchInfo.startDate,
                     endDate: matchInfo.endDate,
+                    team1ID: matchInfo.team1.teamId,
                     teamName1: matchInfo.team1.teamName,
                     teamSName1: matchInfo.team1.teamSName,
                     teamImageId1: matchInfo.team1.imageId,
+                    team2ID: matchInfo.team2.teamId,
                     teamName2: matchInfo.team2.teamName,
                     teamSName2: matchInfo.team2.teamSName,
                     teamImageId2: matchInfo.team2.imageId,
@@ -85,6 +89,10 @@ const MyComponent = () => {
     return startDate <= currentTimestamp && currentTimestamp <= endDate;
   };
 
+  const handleMatchClick = (matchId, team1Id, team2Id) => {
+    window.location.href = `/matchdetail/${matchId}/${team1Id}/${team2Id}`;
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -93,7 +101,7 @@ const MyComponent = () => {
     <div className="upcomingMatchesPage">
       {matches.length > 0 ? (
         matches.map((match, index) => (
-            <div className="upcomingMatches" key={index}>
+            <div className="upcomingMatches" key={index} onClick={() => handleMatchClick(match.matchId,match.team1ID,match.team2ID)}>
               <div className="seriesName">
                 <div className="matchFormat">{match.matchFormat}</div>
                 <div className="series">{match.seriesName}</div>
