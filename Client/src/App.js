@@ -9,6 +9,7 @@ import Predict from './pages/Predict/Predict';
 import Loader from './components/Loader/Loader';
 import Offers from './pages/Offers/Offers';
 import Contact from './pages/Contact/Contact';
+import MatchDetail from './pages/MatchDetail/MatchDetail';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
               <Route exact path="/predict" element={<Predict />} />
               <Route exact path="/offers" element={<Offers />} />
               <Route exact path="/contact" element={<Contact />} />
+              <Route exact path="/matchdetail/:matchId/:team1Id/:team2Id" element={<MatchDetail />} />
             </Routes>
             <Footer />
           </div>

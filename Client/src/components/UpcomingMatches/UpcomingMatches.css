@@ -30,6 +30,8 @@
     border-radius: 0.5rem;
     background-color:rgb(155, 239, 245);
     padding:0.5rem;
+    cursor: pointer;
+    text-decoration: none;
 }
 .seriesName{
     position: relative;
