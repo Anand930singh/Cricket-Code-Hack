@@ -23,7 +23,7 @@ const Navbar = () => {
           <a href="/offers">Offers</a>
           <a href="/contact">Contact</a>
           <a href="/about">About</a>
-          <a href="/matchdetail">Features</a>
+          <a href="/predict">Predict</a>
         </div>
       </div>
     </nav>
