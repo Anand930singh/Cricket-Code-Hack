@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
 
   .card {
-    background-color: #010022; 
-    color: #fff; 
+    background-color: rgb(1, 18, 44); 
     border-radius: 0.1rem;
     padding: 5.4rem 8rem;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(218, 218, 218, 0.2);
     overflow: hidden;
     animation:slideIn 1.5s ease 1; 
+    width: 75%;
+    height: auto;
+    margin-top: 8rem;
+    margin-left: 3rem;
+    border-radius: 1%;
   }
   
   .offers {
@@ -18,13 +22,12 @@
     font-weight:100;
     animation: fadeIn 1.5s ease 1;
     margin-top: -100px;
-
   }
   
   i.present {
     font-size: 10rem; /* Adjust the size of the icon as needed */
     /* margin-right: 10px; */
-    color: #ffcc00;
+    color: gold;
   }
 
   @keyframes slideIn {
@@ -38,9 +41,14 @@
     }
   }
 
+  .offers h1{
+    color: silver;
+    margin-top: 6rem;
+    text-shadow: 2px 1px 2px white;
+  }
 
   .offers h1:hover{
-    color:#eaec40;
+    color:gold;
   }
   
   @keyframes fadeIn {
@@ -58,7 +66,8 @@
   @media (max-width: 656px) {
     .card {
       padding: 3rem;
-      margin-top:5rem;
+      margin-top:9rem;
+      width: 70%;
     }
   
     .offers {
@@ -68,5 +77,50 @@
   
     i.present {
       font-size: 10rem;
+    }
+  }
+
+  @media (max-width: 1190px) {
+    .card {
+      padding: 3rem;
+      margin-top:9rem;
+      width: 80%;
+      margin-left: 4rem;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .card {
+      padding: 3rem;
+      margin-top:9rem;
+      width: 75%;
+      margin-left: 4rem;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .card {
+      padding: 3rem;
+      margin-top:9rem;
+      width: 70%;
+      margin-left: 3rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .card {
+      padding: 3rem;
+      margin-top:9rem;
+      width: 60%;
+      margin-left: 3rem;
+    }
+  }
+
+  @media (max-width: 440px) {
+    .card {
+      padding: 3rem;
+      margin-top:7rem;
+      width: 55%;
+      margin-left: 3rem;
     }
   }

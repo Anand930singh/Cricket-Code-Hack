@@ -22,7 +22,7 @@ function Footer() {
             <BsYoutube size="40" />
           </li>
         </ul>
-        <ul>
+        <ul className="line-two2">
           <li>About</li>
           <li>Need Help?</li>
           <li>Contact</li>
