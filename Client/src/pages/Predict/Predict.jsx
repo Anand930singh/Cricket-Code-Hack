@@ -1,55 +1,150 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { RxCross2 } from "react-icons/rx";
 import "./Predict.css";
 import PredictedDetail from "../../components/PredictedDetail/PredictedDetail";
+import {
+  BattersName,
+  BowlersName,
+  Ground,
+  Country,
+  PlayersBattersNameMapped,
+  PlayersBowlerNameMapped,
+} from "../../constants/players";
+import * as tf from "@tensorflow/tfjs";
 
 function Predict() {
   const [selectedOption, setSelectedOption] = useState("option1");
-  const [selectedOption1, setSelectedOption1] = useState('');
-  const [selectedOption2, setSelectedOption2] = useState('');
-  const [selectedOption3, setSelectedOption3] = useState('');
-  const [selectedOption4, setSelectedOption4] = useState('');
+  const [player, setplayer] = useState("");
+  const [selectedFormat, setSelectedFormat] = useState("");
+  const [selectedStadium, setSelectedStadium] = useState("");
+  const [selectedOppositeCountry, setSelectedOppositeCountry] = useState("");
+  const [selectedDate, setSelectedDate] = useState('');
   const [showPrediction, setShowPrediction] = useState(false);
+  const [playerCountryDict, setPlayerCountDict] = useState();
+
+  const [playersName, setPlayersname] = useState();
 
   const handleOptionChange = (event) => {
+    console.log(event.target.value);
     setSelectedOption(event.target.value);
+    if (event.target.value === "Batting") {
+      setPlayersname(BattersName);
+      setPlayerCountDict(PlayersBattersNameMapped);
+    } else {
+      setPlayersname(BowlersName);
+      setPlayerCountDict(PlayersBowlerNameMapped);
+    }
   };
 
   const handleOptionChange1 = (event) => {
-    setSelectedOption1(event.target.value);
+    setplayer(event.target.value);
+    setplayer(event.target.value);
   };
 
   const handleOptionChange2 = (event) => {
-    setSelectedOption2(event.target.value);
+    setSelectedFormat(event.target.value);
   };
 
   const handleOptionChange3 = (event) => {
-    setSelectedOption3(event.target.value);
+    setSelectedStadium(event.target.value);
   };
 
   const handleOptionChange4 = (event) => {
-    setSelectedOption4(event.target.value);
+    setSelectedOppositeCountry(event.target.value);
   };
 
   const handlePredictClick = () => {
     setShowPrediction(!showPrediction); // Show prediction result when Predict is clicked
   };
 
+  const handleDateChange = (event) => {
+    console.log(event.target.value)
+    setSelectedDate(event.target.value);
+  };
+
+  // const predictFromModel = async () => {
+  //   try {
+  //     const model = await tf.loadLayersModel(process.env.PUBLIC_URL + 'model/model.json');
+
+  //     const input = tf.tensor([
+  //       [ // This array represents a single data point/sample
+  //         // Add hardcoded values for each column in your dataset
+  //         // Example values are provided, replace them with your actual test data
+  //         0,          // Player ID or categorical values for Player
+  //         4,         // Overs
+  //         1,         // Runs
+  //         1,          // Wkts
+  //         55,         // temp
+  //         84.8,         // humidity
+  //         22.9,         // windspeed
+  //         // ... (fill in values for all Ground columns)
+  //         0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  //         // ... (fill in values for all conditions columns)
+  //         0,0,0,0,0,0,1,0,0,0,0,
+  //         // ... (fill in values for all opposition columns)
+  //         0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  //         1,0,0
+  //       ]
+  //     ]);
+
+  //     const predictions = model.predict(input);
+  //     //lal kuch kuch karega
+  //     const out = predictions.dataSync();
+  //     let maxVal = 0;
+  //     for (let i = 1; i < predictions.length; i++) {
+  //       if (!isNaN(predictions[i]) && predictions[i] > maxVal) {
+  //           maxVal = i;
+  //       }
+  //   }
+
+  //   //lal kar dega
+
+  //   console.log('Maximum value:', maxVal);
+
+  //     // console.log(prediction.dataSync()); // Retrieve prediction results
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // useEffect(()=>{
+  //   predictFromModel();
+  // },[])
+
+  //batters model
+
+  // const battersPrediction=async()=>{
+  //   try{
+  //     console.log('hii')
+  //     const battersModel = await tf.loadLayersModel(process.env.PUBLIC_URL + 'model/batters/model.json');
+
+  //     //dummy data filled with zeros
+  //     let zerosArray = new Array(130).fill(0);
+  //     let zerosReshaped = [zerosArray];
+  //     // replace with actual data
+
+  //     const inputBatters = tf.tensor(zerosReshaped)
+  //     const predictBatters = battersModel.predict(inputBatters);
+  //     const output = predictBatters.dataSync();
+
+  //     console.log(output);
+  //     console.log('Model is loaded');
+  //   }
+  //   catch(e)
+  //   {
+  //     console.log('Error:', e);
+  //   }
+  // }
+
+  // useEffect(()=>{
+  //   battersPrediction();
+  // },[])
+
   return (
     <div className="predictMain">
       <div className={`filterForm ${showPrediction ? "blurBackground" : ""}`}>
         <div className="predictionCateg">
-          <label>
-            <input
-              type="radio"
-              name="predictionOption"
-              value="Baitting"
-              checked={selectedOption === "Baitting"}
-              onChange={handleOptionChange}
-            />
-            Batting
-          </label>
           <label>
             <input
               type="radio"
@@ -64,56 +159,87 @@ function Predict() {
             <input
               type="radio"
               name="predictionOption"
-              value="Fielding"
-              checked={selectedOption === "Fielding"}
+              value="Batting"
+              checked={selectedOption === "Batting"}
               onChange={handleOptionChange}
             />
-            Fielding
+            Batting
           </label>
         </div>
         <div className="predictionDetail">
-          <select value={selectedOption1} onChange={handleOptionChange1}>
+          <select value={player} onChange={handleOptionChange1}>
             <option value="">Player Name</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+            {playersName &&
+              playersName.map((player, index) => (
+                <option key={index} value={player}>
+                  {player}
+                </option>
+              ))}
           </select>
 
-          <select value={selectedOption2} onChange={handleOptionChange2}>
+          <select value={selectedFormat} onChange={handleOptionChange2}>
             <option value="">Match Format</option>
-            <option value="option4">Option 4</option>
-            <option value="option5">Option 5</option>
-            <option value="option6">Option 6</option>
+            <option value="OppositeCountry">T20</option>
+            <option value="option5">ODI</option>
+            <option value="option6">TEST</option>
           </select>
 
-          <select value={selectedOption3} onChange={handleOptionChange3}>
+          <select value={selectedStadium} onChange={handleOptionChange3}>
             <option value="">Stadium</option>
-            <option value="option7">Option 7</option>
-            <option value="option8">Option 8</option>
-            <option value="option9">Option 9</option>
+            {Ground &&
+              Ground.map((ground, index) => (
+                <option key={index} value={ground}>
+                  {ground}
+                </option>
+              ))}
           </select>
 
-          <select value={selectedOption4} onChange={handleOptionChange4}>
+          <select
+            value={selectedOppositeCountry}
+            onChange={handleOptionChange4}
+          >
             <option value="">Opposition</option>
-            <option value="option10">Option 10</option>
-            <option value="option11">Option 11</option>
-            <option value="option12">Option 12</option>
+            {Country &&
+              player &&
+              Country.map((country, index) => {
+                if (country !== playerCountryDict[player].country) {
+                  return (
+                    <option key={index} value={country}>
+                      {country}
+                    </option>
+                  );
+                } else {
+                  return null;
+                }
+              })}
           </select>
         </div>
+        <div className="matchDate">
+            <input
+              type="date"
+              min="2005-01-01"
+              value={selectedDate}
+              onChange={handleDateChange}
+            />
+      </div>
         <div className="predictionButton">
           <button onClick={handlePredictClick}>Predict</button>
         </div>
       </div>
-      {showPrediction && ( 
+      {showPrediction && (
         <div className="predictionResult">
           <PredictedDetail />
           <div className="crossSign">
-          <IconContext.Provider
-            value={{ color: "rgb(240, 96, 96)", size: "1.5rem", className:"crossIcon"}}
-          >
-            <RxCross2 onClick={handlePredictClick}/>
-          </IconContext.Provider>
-        </div>
+            <IconContext.Provider
+              value={{
+                color: "rgb(240, 96, 96)",
+                size: "1.5rem",
+                className: "crossIcon",
+              }}
+            >
+              <RxCross2 onClick={handlePredictClick} />
+            </IconContext.Provider>
+          </div>
         </div>
       )}
     </div>
