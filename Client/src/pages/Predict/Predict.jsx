@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { RxCross2 } from "react-icons/rx";
 import "./Predict.css";
 import PredictedDetail from "../../components/PredictedDetail/PredictedDetail";
+import * as tf from '@tensorflow/tfjs';
 
 function Predict() {
   const [selectedOption, setSelectedOption] = useState("option1");
@@ -35,6 +36,25 @@ function Predict() {
   const handlePredictClick = () => {
     setShowPrediction(!showPrediction); // Show prediction result when Predict is clicked
   };
+
+  const predictFromModel=async()=>{
+    console.log('hii')
+    try{
+      const model = await tf.loadLayersModel('./model_bowling_classifications_all.h5');
+      console.log('sex')
+      const input = tf.tensor([1, 2, 3, 4]);
+      const output = model.predict(input);
+      const response= output.json();
+      console.log(response)
+    }
+    catch(error){
+      console.error('Error loading the model:', error);
+    }
+  }
+
+  useEffect(()=>{
+    predictFromModel();
+  },[])
 
   return (
     <div className="predictMain">
