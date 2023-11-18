@@ -37,24 +37,85 @@ function Predict() {
     setShowPrediction(!showPrediction); // Show prediction result when Predict is clicked
   };
 
-  const predictFromModel=async()=>{
-    console.log('hii')
-    try{
-      const model = await tf.loadLayersModel('./model_bowling_classifications_all.h5');
-      console.log('sex')
-      const input = tf.tensor([1, 2, 3, 4]);
-      const output = model.predict(input);
-      const response= output.json();
-      console.log(response)
-    }
-    catch(error){
-      console.error('Error loading the model:', error);
-    }
-  }
+  // const predictFromModel = async () => {
+  //   try {
+  //     const model = await tf.loadLayersModel(process.env.PUBLIC_URL + 'model/model.json');
+      
+  //     const input = tf.tensor([
+  //       [ // This array represents a single data point/sample
+  //         // Add hardcoded values for each column in your dataset
+  //         // Example values are provided, replace them with your actual test data
+  //         0,          // Player ID or categorical values for Player
+  //         4,         // Overs
+  //         1,         // Runs
+  //         1,          // Wkts
+  //         55,         // temp
+  //         84.8,         // humidity
+  //         22.9,         // windspeed
+  //         // ... (fill in values for all Ground columns)
+  //         0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  //         // ... (fill in values for all conditions columns)
+  //         0,0,0,0,0,0,1,0,0,0,0,
+  //         // ... (fill in values for all opposition columns)
+  //         0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  //         1,0,0
+  //       ]
+  //     ]);
+      
+  //     const predictions = model.predict(input);
+  //     //lal kuch kuch karega
+  //     const out = predictions.dataSync();
+  //     let maxVal = 0;
+  //     for (let i = 1; i < predictions.length; i++) {
+  //       if (!isNaN(predictions[i]) && predictions[i] > maxVal) {
+  //           maxVal = i;
+  //       }
+  //   }
 
-  useEffect(()=>{
-    predictFromModel();
-  },[])
+  //   //lal kar dega
+    
+  //   console.log('Maximum value:', maxVal);
+
+  //     // console.log(prediction.dataSync()); // Retrieve prediction results
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+  
+
+  // useEffect(()=>{
+  //   predictFromModel();
+  // },[])
+
+
+  //batters model
+
+  // const battersPrediction=async()=>{
+  //   try{
+  //     console.log('hii')
+  //     const battersModel = await tf.loadLayersModel(process.env.PUBLIC_URL + 'model/batters/model.json');
+
+  //     //dummy data filled with zeros
+  //     let zerosArray = new Array(130).fill(0);
+  //     let zerosReshaped = [zerosArray];
+  //     // replace with actual data
+
+  //     const inputBatters = tf.tensor(zerosReshaped)
+  //     const predictBatters = battersModel.predict(inputBatters);
+  //     const output = predictBatters.dataSync();
+
+  //     console.log(output);
+  //     console.log('Model is loaded');
+  //   }
+  //   catch(e)
+  //   {
+  //     console.log('Error:', e);
+  //   }
+  // }
+
+  // useEffect(()=>{
+  //   battersPrediction();
+  // },[])
 
   return (
     <div className="predictMain">
@@ -79,16 +140,6 @@ function Predict() {
               onChange={handleOptionChange}
             />
             Bowling
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="predictionOption"
-              value="Fielding"
-              checked={selectedOption === "Fielding"}
-              onChange={handleOptionChange}
-            />
-            Fielding
           </label>
         </div>
         <div className="predictionDetail">
