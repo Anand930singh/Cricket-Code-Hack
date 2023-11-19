@@ -2,6 +2,8 @@
 
 Figma Link: https://www.figma.com/file/o5X0o9S5zIdlQr1VKlZfxS/Predictor?type=design&node-id=0%3A1&mode=design&t=pRR8sdKVxidMJi8i-1
 
+Hosted Website Link: https://cricket-code-hack.vercel.app/
+
 # Cricket Prediction App
 
 This React project is designed to predict the performance of batsmen and bowlers in upcoming cricket matches. The application utilizes machine learning algorithms to forecast the number of runs a batsman will score and the number of fours they are likely to hit. Additionally, it predicts the number of balls a bowler will deliver in the upcoming matches.
