@@ -3,7 +3,7 @@ import {Hourglass} from 'react-loader-spinner'
 import "./PredictedDetail.css";
 import { playersIndexing } from "../../constants/players";
 
-function PredictedDetail({playerName, minRun,maxRun, minFour, maxFour}) {
+function PredictedDetail({playerName, minRun,maxRun, minFour, maxFour, minSix, maxSix}) {
   const [playerImage, setPlayerImage] = useState(null);
 
   const fetchPlayerImage = async(imageId)=>{
@@ -62,6 +62,10 @@ function PredictedDetail({playerName, minRun,maxRun, minFour, maxFour}) {
           <div className="noSixContainer">
             <div className="predictTitle">Four</div>
             <div className="predictValue">{minFour} - {maxFour}</div>
+          </div>
+          <div className="noFoursContainer">
+            <div className="predictTitle">Six</div>
+            <div className="predictValue">{minSix} - {maxSix-3}</div>
           </div>
         </div>
       </div>

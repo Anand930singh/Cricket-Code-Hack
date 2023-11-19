@@ -41,6 +41,7 @@ function Predict() {
   const [playersName, setPlayersname] = useState();
   const [predictedRun, setPredictedRun] = useState();
   const [predictedFours, setPredictedFours] = useState();
+  const [predictedSixes, setPredictedSixes] = useState();
   const [condition, setCondition] = useState();
   const [predictedWicket, setPredictedWicket] = useState();
 
@@ -101,6 +102,7 @@ function Predict() {
 
         setPredictedRun(dataRun);
         setPredictedFours(dataFours);
+        setPredictedSixes(dataFours);
       } else {
         console.log(dataCond, BowlCondition[dataCond.conditions], "condition");
         const bowRun = await BowlingPrediction(
@@ -251,6 +253,8 @@ function Predict() {
               maxRun={predictedRun.max}
               minFour={predictedFours.min}
               maxFour={predictedFours.max}
+              minSix={predictedSixes.min}
+              maxSix={predictedSixes.max}
             />
           ) : (
             <PredictBowlerDetail 

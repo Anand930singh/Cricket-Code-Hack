@@ -80,7 +80,7 @@ export const BowlingWicketPrediction=async(playerName, groundName, condition, op
 
     }
     console.log('range:', maxVal*10,'-',maxVal*10+10 );
-    return {'min':maxVal*10, 'max':maxVal*10+10}
+    return {'min':maxVal, 'max':maxVal+2}
     
     }
     catch(error)
