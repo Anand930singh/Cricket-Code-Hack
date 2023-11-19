@@ -33,7 +33,6 @@ export const BowlingPrediction=async(playerName, groundName, condition, opp, for
         if (!isNaN(predictions[i]) && predictions[i] > maxVal) {
             maxVal = i;
         }
-
     }
     console.log('range:', maxVal*10,'-',maxVal*10+10 );
     return {'min':40, 'max':50}
