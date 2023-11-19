@@ -269,3 +269,10 @@ export const Country = [
     'T20I': 2,
   };
 
+  export const fourIndexing ={
+    0: {'min':0, 'max':5},
+    1: {'min':5, 'max':10},
+    2: {'min':10, 'max':20},
+    3: {'min':20, 'max':'+'},
+  }
+
