@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {Hourglass} from 'react-loader-spinner'
 import "./PredictedDetail.css";
 
-function PredictedDetail() {
+function PredictedDetail({minRun,maxRun}) {
   const [playerImage, setPlayerImage] = useState(null);
 
   const fetchPlayerImage = async(playerName)=>{
@@ -66,7 +66,7 @@ function PredictedDetail() {
         <div className="predictModelData">
           <div className="totalRunContainer">
             <div className="predictTitle">Total Run</div>
-            <div className="predictValue">93</div>
+            <div className="predictValue">{minRun} - {maxRun}</div>
           </div>
           <div className="noSixContainer">
             <div className="predictTitle">Six</div>

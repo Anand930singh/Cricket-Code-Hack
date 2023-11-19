@@ -12,7 +12,7 @@ import {
   PlayersBowlerNameMapped,
 } from "../../constants/players";
 import * as tf from "@tensorflow/tfjs";
-import { BattersRunPrediction } from "../../prediction_model/batters";
+import { BattersRunPrediction, BattersFoursPrediction } from "../../prediction_model/batters";
 
 function Predict() {
   const [selectedOption, setSelectedOption] = useState("option1");
@@ -23,8 +23,9 @@ function Predict() {
   const [selectedDate, setSelectedDate] = useState('');
   const [showPrediction, setShowPrediction] = useState(false);
   const [playerCountryDict, setPlayerCountDict] = useState();
-
   const [playersName, setPlayersname] = useState();
+  const [predictedRun, setPredictedRun] = useState()
+  const [predictedFours, setPredictedFours] = useState()
 
   const handleOptionChange = (event) => {
     console.log(event.target.value);
@@ -55,8 +56,15 @@ function Predict() {
     setSelectedOppositeCountry(event.target.value);
   };
 
-  const handlePredictClick = () => {
-    fetchData('Cape Town',selectedDate)
+  const handlePredictClick = async () => {
+    if(showPrediction===false)
+    {
+      fetchData('Cape Town',selectedDate)
+      const dataRun= await BattersRunPrediction()
+      const dataFours= await BattersFoursPrediction()
+      console.log(dataRun,'data')
+      setPredictedRun(data)
+    }
     setShowPrediction(!showPrediction); 
   };
 
@@ -170,9 +178,9 @@ function Predict() {
   //   }
   // }
 
-  useEffect(()=>{
-    BattersRunPrediction();
-  },[])
+  // useEffect(()=>{
+  //   BattersRunPrediction();
+  // },[])
 
   return (
     <div className="predictMain">
@@ -259,9 +267,12 @@ function Predict() {
           <button onClick={handlePredictClick}>Predict</button>
         </div>
       </div>
-      {showPrediction && (
+      {showPrediction && predictedRun && (
         <div className="predictionResult">
-          <PredictedDetail />
+          <PredictedDetail 
+            minRun={predictedRun.min}
+            maxRun={predictedRun.max}
+          />
           <div className="crossSign">
             <IconContext.Provider
               value={{
