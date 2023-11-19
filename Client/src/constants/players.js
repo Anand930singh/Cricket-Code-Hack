@@ -106,3 +106,12 @@ export const Country = [
     'Canada'
   ];
   
+
+  export const RunRange={
+    0: {'min':0, 'max':30},
+    1: {'min':30, 'max':60},
+    2: {'min':60, 'max':100},
+    3: {'min':100, 'max':150},
+    4: {'min':150, 'max':200},
+    5: {'min':200, 'max':'+'},
+  }
