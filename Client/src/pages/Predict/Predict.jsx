@@ -12,6 +12,7 @@ import {
   PlayersBowlerNameMapped,
 } from "../../constants/players";
 import * as tf from "@tensorflow/tfjs";
+import { BattersRunPrediction } from "../../prediction_model/batters";
 
 function Predict() {
   const [selectedOption, setSelectedOption] = useState("option1");
@@ -55,13 +56,34 @@ function Predict() {
   };
 
   const handlePredictClick = () => {
-    setShowPrediction(!showPrediction); // Show prediction result when Predict is clicked
+    fetchData('Cape Town',selectedDate)
+    setShowPrediction(!showPrediction); 
   };
 
   const handleDateChange = (event) => {
     console.log(event.target.value)
     setSelectedDate(event.target.value);
   };
+
+  const fetchData= async(place,date)=>{
+
+      const key = '4V83DKENMEVGYTBJGYVLNFV4B';
+      const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Dhaka/${date}/${date}?unitGroup=us&include=days&key=4V83DKENMEVGYTBJGYVLNFV4B&contentType=json`;
+
+      try {
+        const response = await fetch(url);
+        console.log(url);
+        console.log(response,'reskjb')
+        if (response) {
+          const data = await response.json();
+          console.log(data)
+        } else {
+          throw new Error('Failed to fetch data');
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+  }
 
   // const predictFromModel = async () => {
   //   try {
@@ -120,15 +142,26 @@ function Predict() {
   //     const battersModel = await tf.loadLayersModel(process.env.PUBLIC_URL + 'model/batters/model.json');
 
   //     //dummy data filled with zeros
-  //     let zerosArray = new Array(130).fill(0);
-  //     let zerosReshaped = [zerosArray];
-  //     // replace with actual data
+  //     const check = tf.tensor1d(new Array(160).fill(0));
+  //     const indicesToSetAs1 = [18,153, 139, 62, 19];
+  //     indicesToSetAs1.forEach(index => check[index] = 1);
+  //     const checkReshaped = check.reshape([1, -1]);
+  //     const final = checkReshaped.arraySync();
+  //     const predictions = battersModel.predict(tf.tensor2d(final));
 
-  //     const inputBatters = tf.tensor(zerosReshaped)
-  //     const predictBatters = battersModel.predict(inputBatters);
-  //     const output = predictBatters.dataSync();
+  //     console.log(predictions,'predictions')
 
-  //     console.log(output);
+  //     const maxIndex = predictions.argMax().dataSync()[0];
+
+  //     console.log("Index with maximum predicted value:", maxIndex);
+  //     // let zerosReshaped = [zerosArray];
+  //     // // replace with actual data
+
+  //     // const inputBatters = tf.tensor(zerosReshaped)
+  //     // const predictBatters = battersModel.predict(inputBatters);
+  //     // const output = predictBatters.dataSync();
+
+  //     // console.log(output);
   //     console.log('Model is loaded');
   //   }
   //   catch(e)
@@ -137,9 +170,9 @@ function Predict() {
   //   }
   // }
 
-  // useEffect(()=>{
-  //   battersPrediction();
-  // },[])
+  useEffect(()=>{
+    BattersRunPrediction();
+  },[])
 
   return (
     <div className="predictMain">
