@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  client:
+    image: ashishlal2003/cricket-hack:latest  # Ensure the repository and tag are correct
+    ports:
+      - "3000:3000"

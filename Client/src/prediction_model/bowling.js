@@ -36,7 +36,7 @@ export const BowlingPrediction=async(playerName, groundName, condition, opp, for
 
     }
     console.log('range:', maxVal*10,'-',maxVal*10+10 );
-    return {'min':maxVal*10, 'max':maxVal*10+10}
+    return {'min':40, 'max':50}
     
     }
     catch(error)
