@@ -1,6 +1,6 @@
 # Cricket-Code-Hack
 
-Figma Link: https://www.figma.com/file/o5X0o9S5zIdlQr1VKlZfxS/Predictor?type=design&node-id=0%3A1&mode=design&t=pRR8sdKVxidMJi8i-1
+Figma Link: [https://www.figma.com/file/o5X0o9S5zIdlQr1VKlZfxS/Predictor?type=design&node-id=0%3A1&mode=design&t=pRR8sdKVxidMJi8i-1](https://www.figma.com/proto/o5X0o9S5zIdlQr1VKlZfxS/Predictor?type=design&node-id=2-2&t=lRGbf2Y4txF1EOt2-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=2%3A2)
 
 Hosted Website Link: https://cricket-code-hack.vercel.app/
 
