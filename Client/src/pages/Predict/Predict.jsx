@@ -213,15 +213,15 @@ function Predict() {
                 }
               })}
           </select>
-        </div>
-        <div className="matchDate">
+          <div className="matchDate">
             <input
               type="date"
               min="2005-01-01"
               value={selectedDate}
               onChange={handleDateChange}
             />
-      </div>
+          </div>
+        </div>
         <div className="predictionButton">
           <button onClick={handlePredictClick}>Predict</button>
         </div>
