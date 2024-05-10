@@ -40,6 +40,7 @@ function App() {
               <Route exact path="/matchdetail/:matchId/:team1Id/:team2Id" element={<MatchDetail />} />
             </Routes>
             <Footer />
+            <Analytics/>
           </div>
         </Router>
 
