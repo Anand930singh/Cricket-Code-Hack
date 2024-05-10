@@ -8,6 +8,7 @@ import About from './pages/About/About'
 import Predict from './pages/Predict/Predict';
 import Loader from './components/Loader/Loader';
 import Offers from './pages/Offers/Offers';
+import { Analytics } from "@vercel/analytics/react"
 import Contact from './pages/Contact/Contact';
 import MatchDetail from './pages/MatchDetail/MatchDetail';
 
