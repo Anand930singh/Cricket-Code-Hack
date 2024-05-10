@@ -16,7 +16,7 @@ const MyComponent = () => {
     const options = {
       method: "GET",
       headers: {
-        'X-RapidAPI-Key': '3e8ef66ca9msh5b1b3703e0f1858p18e899jsn2f40e3f2d1a0',
+        'X-RapidAPI-Key': '9410983b1dmshf1d5da42cb0b8adp1d2ccejsn578878640b5a',
         'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
     },
     };
@@ -32,10 +32,11 @@ const MyComponent = () => {
             let date = item.matchScheduleMap.date;
             item.matchScheduleMap.matchScheduleList.forEach((matche) => {
               let seriesName = matche.seriesName;
-              if (seriesName.includes("ICC")) {
+              // if (seriesName.includes("ICC")) {
                 matche.matchInfo.forEach(async (matchInfo) => {
                   let team1_code, team2_code;
                   let i = 0;
+
                   for (const cd in code) {
                     if (code[cd] === matchInfo.team1.teamName) {
                       team1_code = cd;
@@ -49,7 +50,6 @@ const MyComponent = () => {
                       break;
                     }
                   }
-                  console.log(matchInfo)
                   matchDataArray.push({
                     seriesName: seriesName,
                     date: date,
@@ -72,7 +72,7 @@ const MyComponent = () => {
                     matchFormat: matchInfo.matchFormat
                   });
                 });
-              }
+              // }
             });
           }
         });
