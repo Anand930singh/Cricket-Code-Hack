@@ -16,7 +16,7 @@ const MyComponent = () => {
     const options = {
       method: "GET",
       headers: {
-        'X-RapidAPI-Key': 'ab4f5d7ea0msheba8b9ed589ea3bp1a8e40jsne0e04433e4de',
+        'X-RapidAPI-Key': '3e8ef66ca9msh5b1b3703e0f1858p18e899jsn2f40e3f2d1a0',
         'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
     },
     };
